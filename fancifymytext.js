@@ -1,38 +1,36 @@
-// Simple alert to confirm your JS is loaded
-alert("Hello from fancifymytext.js!");
+// Alert to verify JS is loaded
+alert("Hello, world!");
 
-// Increase the text size when 'Bigger!' is clicked
+// Function to increase text size to 24pt
 function makeTextBigger() {
   const textArea = document.getElementById("userText");
-  // You could dynamically calculate the current size; 
-  // here we'll just bump it to something noticeably larger
   textArea.style.fontSize = "24pt";
 }
 
-// Apply "FancyShmancy" styles
+// Function to apply "FancyShmancy" styling
 function applyFancyStyle() {
   const textArea = document.getElementById("userText");
   textArea.style.fontWeight = "bold";
   textArea.style.color = "blue";
   textArea.style.textDecoration = "underline";
-  // You can add or remove any other styles as desired
 }
 
-// Revert to normal "BoringBetty" styles
+// Function to revert to "BoringBetty" styling
 function applyBoringStyle() {
   const textArea = document.getElementById("userText");
   textArea.style.fontWeight = "normal";
   textArea.style.color = "black";
   textArea.style.textDecoration = "none";
-  textArea.style.fontSize = "1em"; // revert to a default size
+  // Optionally revert font size to default
+  textArea.style.fontSize = "1em";
 }
 
-// Add event listeners after the page loads
+// Set up event listeners after the page loads
 window.onload = function() {
-  // Button: make the text bigger
+  // Button event: make text bigger
   document.getElementById("biggerBtn").onclick = makeTextBigger;
 
-  // Radio buttons: fancy vs. boring
+  // Radio events: toggle fancy vs. boring style
   document.getElementById("fancy").onchange = applyFancyStyle;
   document.getElementById("boring").onchange = applyBoringStyle;
 };
